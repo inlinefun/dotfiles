@@ -4,3 +4,5 @@
 > This is still a work in progress, majorly incomplete
 
 The repository is (supposed to be) structured to work with [chezmoi](https://github.com/twpayne/chezmoi)
+
+> hyprland configuration is outdated as I'm using niri
