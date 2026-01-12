@@ -43,6 +43,9 @@ binds {
     Mod+Shift+M {
         quit;
     }
+    Mod+V {
+        spawn "zsh" "-c" "hyprpicker | wl-copy"
+    }
     Mod+Ctrl+S {
         screenshot show-pointer=true;
     }
