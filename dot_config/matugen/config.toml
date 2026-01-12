@@ -49,6 +49,10 @@ output_path = "~/.config/quickshell/yes/common/Colors.qml"
 input_path = "templates/discord.css"
 output_path = "~/.config/vesktop/themes/dynamic.css"
 
+[templates.waywall]
+input_path = "templates/waywall.lua"
+output_path = "~/.config/waywall/colors.lua"
+
 [templates.zed]
 input_path = "templates/zed.json"
 output_path = "~/.config/zed/themes/matugen.json"
