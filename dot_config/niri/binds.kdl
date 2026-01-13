@@ -81,8 +81,8 @@ binds {
     XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "-n" "set" "5%+"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "-n" "set" "5%-"; }
 
-    Alt+Tab { focus-column-right-or-first; }
-    Alt+Shift+Tab { focus-column-left-or-last; }
+    // Alt+Tab { focus-column-right-or-first; }
+    // Alt+Shift+Tab { focus-column-left-or-last; }
     Mod+Tab { focus-column-right-or-first; }
     Mod+Shift+Tab { focus-column-left-or-last; }
 
