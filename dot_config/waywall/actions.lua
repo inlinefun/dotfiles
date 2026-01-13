@@ -1,9 +1,9 @@
 local resolutions = require("resolutions")
 local util = require("util")
 
-local tall_res = "*-5"
-local thin_res = "*-Alt_L"
-local wide_res = "*-C"
+local tall_res = "F4"
+local thin_res = "Alt_L"
+local wide_res = "Ctrl-C"
 
 return {
     ["Ctrl-O"] = util.toggle_fullscreen,

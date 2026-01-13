@@ -23,7 +23,7 @@ local toggle_res = function(resolution)
     -- mirrors
     mirrors.disable_all() -- disable all and enable only ones required
     if current_res == resolutions.tall then
-
+        mirrors.toggle_eye_measure()
     elseif current_res == resolutions.thin then
         mirrors.toggle_entity_count()
         mirrors.toggle_pie()

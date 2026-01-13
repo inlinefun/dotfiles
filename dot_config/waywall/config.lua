@@ -7,6 +7,7 @@ return {
     },
     -- resolution values from https://github.com/arjuncgore/waywall_generic_config
     resolutions = {
+        -- does not affect anything
         normal = {
             width = 0,
             height = 0

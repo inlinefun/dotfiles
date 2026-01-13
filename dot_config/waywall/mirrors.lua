@@ -1,8 +1,9 @@
 local waywall = require("waywall")
 local colors = require("colors")
 local config = require("config")
+local util = require("util")
 
-local manage_mirror = function(params)
+local create_mirror = function(params)
     local mirror = nil
     return function(visible)
         if visible and not mirror then
@@ -10,6 +11,18 @@ local manage_mirror = function(params)
         elseif not visible and mirror then
             mirror:close()
             mirror = nil
+        end
+    end
+end
+
+local create_image = function(path, params)
+    local image = nil
+    return function(visible)
+        if visible and not image then
+            image = waywall.image(path, params)
+        elseif not visible and image then
+            image:close()
+            image = nil
         end
     end
 end
@@ -50,7 +63,7 @@ local function resolve_output_color(name)
     end
 end
 local make_pie_chart_label = function(color_key_input, color_key_output)
-    return manage_mirror({
+    return create_mirror({
         src = pie_chart_label_base_object.src,
         dst = pie_chart_label_base_object.dst,
         color_key = {
@@ -60,9 +73,8 @@ local make_pie_chart_label = function(color_key_input, color_key_output)
     })
 end
 
-
 local mirrors = {
-    entity_count = manage_mirror({
+    entity_count = create_mirror({
         src = { x = 13, y = 37, w = 37, h = 9 },
         dst = {
             x = config.mirrors.entity_count.x,
@@ -75,7 +87,7 @@ local mirrors = {
             output = config.mirrors.entity_count.color
         } or nil
     }),
-    entity_count_in_screen = manage_mirror({
+    entity_count_in_screen = create_mirror({
         src = { x = 13, y = 37, w = 37, h = 9 },
         dst = {
             x = config.mirrors.entity_count.x,
@@ -90,7 +102,7 @@ local mirrors = {
     }),
 
     -- pie chart contents
-    pie_chart = manage_mirror({
+    pie_chart = create_mirror({
         src = { x = 10, y = 680, w = 320, h = 170 },
         dst = {
             x = config.mirrors.pie_chart.x,
@@ -99,7 +111,7 @@ local mirrors = {
             h = config.mirrors.pie_chart.scale * 170
         }
     }),
-    pie_chart_directory = manage_mirror({
+    pie_chart_directory = create_mirror({
         src = { x = 10, y = 663, w = 320, h = 20 },
         dst = {
             x = config.mirrors.pie_chart.x - (60), -- some random value lmao
@@ -112,6 +124,20 @@ local mirrors = {
             output = config.mirrors.pie_chart_labels.color,
         },
     }),
+    -- eye measure
+    eye_measure = create_mirror({
+        src = { x = 162, y = 7902, w = 60, h = 580 },
+        dst = { x = 30, y = 340, w = 700, h = 400 }
+    })
+}
+
+local overlays = {
+    eye_measure = create_image(
+        util.eye_measure_image,
+        {
+            dst = { x = 30, y = 340, w = 700, h = 400 }
+        }
+    )
 }
 
 for name, input_color in pairs(pie_chart_colors) do
@@ -122,6 +148,9 @@ end
 local disable_all = function()
     mirrors.entity_count(false)
     mirrors.entity_count_in_screen(false)
+    -- eye measure
+    mirrors.eye_measure(false)
+    overlays.eye_measure(false)
     -- pie chart
     mirrors.pie_chart(false)
     mirrors.pie_chart_directory(false)
@@ -143,8 +172,14 @@ local toggle_entity_count = function()
     mirrors.entity_count_in_screen(true)
 end
 
+local toggle_eye_measuring = function()
+    overlays.eye_measure(true)
+    mirrors.eye_measure(true)
+end
+
 return {
     disable_all = disable_all,
     toggle_entity_count = toggle_entity_count,
-    toggle_pie = toggle_pie
+    toggle_pie = toggle_pie,
+    toggle_eye_measure = toggle_eye_measuring
 }
