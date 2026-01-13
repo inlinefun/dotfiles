@@ -2,11 +2,10 @@ local waywall = require("waywall")
 local helper = require("waywall.helpers")
 
 local resources_dir = os.getenv("HOME") .. "/.config/waywall/resources/"
-local ninbot_jar = resources_dir .. "ninbot.jar"
 local eye_measure_image = resources_dir .. "eye_measure_overlay.png"
 
 local ninbot_running = function()
-    local handle = io.popen("pgrep -f 'ninbot.*jar'")
+    local handle = io.popen("pgrep -f 'ninjabrain-bot.*jar'")
     local result = handle:read("*l")
     handle:close()
     return result ~= nil
@@ -16,7 +15,7 @@ local toggle_ninbot = function()
     if ninbot_running() then
         helper.toggle_floating()
     else
-        waywall.exec("java -Dawt.useSystemAAFontSettings=on -jar " .. ninbot_jar)
+        waywall.exec("ninbot")
         waywall.set_floating(true)
     end
 end

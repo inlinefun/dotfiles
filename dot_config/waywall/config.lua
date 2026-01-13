@@ -2,8 +2,8 @@ local colors = require("colors")
 
 return {
     sensitivities = {
-        normal = 1.0,
-        eye_measure = 0.1
+        normal = 8.832626,
+        eye_measure = 0.59584367
     },
     -- resolution values from https://github.com/arjuncgore/waywall_generic_config
     resolutions = {
