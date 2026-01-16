@@ -1,0 +1,8 @@
+setopt NULL_GLOB
+for file in $HOME/.config/zsh/*; do
+    source $file
+done
+unsetopt NULL_GLOB
+
+# "line" cursor
+echo -ne '\e[5 q'
