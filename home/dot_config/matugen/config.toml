@@ -1,0 +1,6 @@
+[config]
+fallback_color = "#00aeff"
+
+[templates.zsh]
+input_path = "./templates/zsh-colors.zsh"
+output_path = "~/.config/zsh/10-colors.zsh"
