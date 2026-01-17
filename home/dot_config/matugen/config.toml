@@ -1,6 +1,11 @@
 [config]
 fallback_color = "#00aeff"
 
+[templates.kitty]
+input_path = "./templates/kitty-colors.conf"
+output_path = "~/.config/kitty/themes/material-theme.conf"
+post_hook = "kitty +kitten themes --reload-in=all material-theme"
+
 [templates.zsh]
 input_path = "./templates/zsh-colors.zsh"
 output_path = "~/.config/zsh/10-colors.zsh"
