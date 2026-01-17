@@ -14,7 +14,7 @@ PROMPT_GIT_DIRTY="249;226;175" # rgb(249, 226, 175) yellow
 PROMPT_GIT_AHEAD="137;220;235" # rgb(137, 220, 235) sky
 PROMPT_GIT_BEHIND="235;160;172" # rgb(235, 160, 172) maroon
 PROMPT_GIT_DIVERGED="243;139;168" # rgb(243, 139, 168) red
-PROMPT_ON_GIT="17;17;27" # rgb(17, 17, 27) crust
+# PROMPT_ON_GIT="17;17;27" # rgb(17, 17, 27) crust
 <* else *>
 PROMPT_GIT_CLEAN="64;160;43" # rgb(64, 160, 43) green
 PROMPT_GIT_STAGED="136;57;239" # rgb(136, 57, 239) mauve
@@ -22,5 +22,7 @@ PROMPT_GIT_DIRTY="223;142;29" # rgb(223, 142, 29) yellow
 PROMPT_GIT_AHEAD="4;165;229" # rgb(4, 165, 229) sky
 PROMPT_GIT_BEHIND="230;69;83" # rgb(230, 69, 83) maroon
 PROMPT_GIT_DIVERGED="210;15;57" # rgb(210, 15, 57) red
-PROMPT_ON_GIT="220;224;232" # rgb(220, 224, 232) crust
+# PROMPT_ON_GIT="220;224;232" # rgb(220, 224, 232) crust
 <* endif *>
+
+PROMPT_ON_GIT="{{colors.on_primary.default.red}};{{colors.on_primary.default.green}};{{colors.on_primary.default.blue}}"
