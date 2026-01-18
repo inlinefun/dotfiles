@@ -63,8 +63,8 @@ git_info() {
     fi
 
     fg_color="$PROMPT_ON_GIT"
-    (( ahead > 0 ))  && arrows+="↑$ahead "
-    (( behind > 0 )) && arrows+="↓$behind "
+    (( ahead > 0 ))  && arrows+="↑$ahead"
+    (( behind > 0 )) && arrows+="↓$behind"
 
     echo "$(fg "$bg_color")$(bg "$bg_color")$(fg "$fg_color") $branch $arrows$(reset)$(fg "$bg_color")$(reset)"
 }
