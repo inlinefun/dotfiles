@@ -6,6 +6,10 @@ input_path = "./templates/kitty-colors.conf"
 output_path = "~/.config/kitty/themes/material-theme.conf"
 post_hook = "kitty +kitten themes --reload-in=all material-theme"
 
+[templates.niri]
+input_path = "./templates/niri-colors.kdl"
+output_path = "~/.config/niri/colors.kdl"
+
 [templates.waywall]
 input_path = "./templates/waywall-colors.lua"
 output_path = "~/.config/waywall/colors.lua"
