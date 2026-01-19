@@ -6,6 +6,10 @@ input_path = "./templates/kitty-colors.conf"
 output_path = "~/.config/kitty/themes/material-theme.conf"
 post_hook = "kitty +kitten themes --reload-in=all material-theme"
 
+[templates.waywall]
+input_path = "./templates/waywall-colors.lua"
+output_path = "~/.config/waywall/colors.lua"
+
 [templates.zsh]
 input_path = "./templates/zsh-colors.zsh"
 output_path = "~/.config/zsh/10-colors.zsh"
