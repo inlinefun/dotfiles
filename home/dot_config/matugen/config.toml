@@ -11,6 +11,11 @@ input_path = "./templates/kitty-colors.conf"
 output_path = "~/.config/kitty/themes/material-theme.conf"
 post_hook = "kitty +kitten themes --reload-in=all material-theme"
 
+[templates.mako]
+input_path = "./templates/mako-colors"
+output_path = "~/.config/mako/colors"
+post_hook = "makoctl reload"
+
 [templates.niri]
 input_path = "./templates/niri-colors.kdl"
 output_path = "~/.config/niri/colors.kdl"
