@@ -1,6 +1,11 @@
 [config]
 fallback_color = "#00aeff"
 
+[templates.hyprpaper]
+input_path = "./templates/hyprpaper-config.conf"
+output_path = "~/.config/hypr/hyprpaper.conf"
+post_hook = "systemctl --user restart hyprpaper.service"
+
 [templates.kitty]
 input_path = "./templates/kitty-colors.conf"
 output_path = "~/.config/kitty/themes/material-theme.conf"
