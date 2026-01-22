@@ -86,6 +86,8 @@ binds {
     Mod+Tab { focus-column-right-or-first; }
     Mod+Shift+Tab { focus-column-left-or-last; }
 
+    Mod+Ctrl+Up { set-window-height "-5%"; }
+    Mod+Ctrl+Down { set-window-height "+5%"; }
     Mod+Ctrl+Left { set-column-width "-5%"; }
     Mod+Ctrl+Right { set-column-width "+5%"; }
 
