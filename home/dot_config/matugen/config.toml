@@ -28,6 +28,10 @@ output_path = "~/.config/qt5ct/colors/material.conf"
 input_path = "./templates/qtct-colors.conf"
 output_path = "~/.config/qt6ct/colors/material.conf"
 
+[templates.rofi]
+input_path = "./templates/rofi-colors.rasi"
+output_path = "~/.config/rofi/colors.rasi"
+
 [templates.waywall]
 input_path = "./templates/waywall-colors.lua"
 output_path = "~/.config/waywall/colors.lua"

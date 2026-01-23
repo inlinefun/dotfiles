@@ -1,0 +1,57 @@
+@import "colors"
+
+configuration {
+    modes: "drun";
+    font: "Roboto 14";
+}
+
+window {
+    border: 2px;
+    width: 512px;
+    border-radius: 5px;
+    border-color: @primary;
+    background-color: @surface;
+}
+
+entry {
+    placeholder: "...";
+}
+
+scrollbar {
+    background-color: @primary;
+}
+
+element {
+    spacing: 5px;
+    padding: 5px;
+    children: [ element-icon, element-text ];
+}
+
+element normal.normal {
+    text-color: @on-surface;
+    background-color: @surface;
+}
+element alternate.normal {
+    text-color: @on-surface;
+    background-color: @surface;
+}
+element selected.normal {
+    background-color: @surface-container;
+    text-color: @primary;
+}
+
+scrollbar {
+    background-color: @surface-container;
+}
+scrollbar normal {
+    background-color: @surface-container;
+}
+
+inputbar, prompt, entry, num-rows, num-filtered-rows, case-indicator {
+    text-color: @on-surface;
+}
+
+listview {
+    lines: 10;
+    scrollbar: false;
+}
