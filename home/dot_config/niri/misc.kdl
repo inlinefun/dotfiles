@@ -20,3 +20,5 @@ environment {
 }
 
 spawn-at-startup "systemctl" "--user" "start" "hyprpaper.service"
+// uses default config anyway, so it is fine to start without any config specified
+spawn-at-startup "quickshell" "--no-duplicate" "--daemonize"
