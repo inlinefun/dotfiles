@@ -12,7 +12,7 @@ import qs.services
 PanelWindow {
     id: root
 
-    readonly property bool show: volume.show | power.show | media.show | brightness.show | bluetooth.show
+    readonly property bool show: volume.show | power.show | media.show | brightness.show | bluetooth.show | battery.show
     property int _timer: show ? 1 : 0
 
     anchors {
@@ -55,6 +55,9 @@ PanelWindow {
             BluetoothOSD {
                 id: bluetooth
             }
+            BatteryOSD {
+                id: battery
+            }
         }
     }
     Component.onCompleted: {
@@ -75,7 +78,13 @@ PanelWindow {
         });
         BluetoothService.onUpdate.connect(() => {
             bluetooth.resetTimer();
-        })
+        });
+        BatteryService.onStateChange.connect(() => {
+            battery.resetTimer();
+        });
+        BatteryService.onChargeChange.connect(charge => {
+            battery.resetTimer();
+        });
     }
     Behavior on _timer {
         AnimateNumber {}
