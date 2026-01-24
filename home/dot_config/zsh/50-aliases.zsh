@@ -11,3 +11,6 @@ alias q='exit'
 
 alias :q='exit'
 alias ..='cd ..'
+
+alias cat='bat'
+alias grep='rg'
