@@ -1,6 +1,11 @@
 [config]
 fallback_color = "#00aeff"
 
+[templates.hypr]
+input_path = "./templates/hypr-colors.conf"
+output_path = "~/.config/hypr/colors.conf"
+post_hook = "hyprctl reload"
+
 [templates.hyprpaper]
 input_path = "./templates/hyprpaper-config.conf"
 output_path = "~/.config/hypr/hyprpaper.conf"
