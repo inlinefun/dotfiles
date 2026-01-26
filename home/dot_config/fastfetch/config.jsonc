@@ -2,7 +2,9 @@
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
   "logo": {
     "source": "~/.config/assets/image.png",
-    "type": "auto",
+    "type": "kitty-direct",
+    "position": "left",
+    "preserveAspectRatio": true,
   },
   "display": {
     "separator": "",
