@@ -37,6 +37,10 @@ PanelWindow {
         anchors {
             fill: parent
         }
+        border {
+            width: Constants.border
+            color: Colors.surface_bright
+        }
         ColumnLayout {
             id: layout
             spacing: 0
