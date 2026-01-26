@@ -18,8 +18,7 @@ MouseArea {
     hoverEnabled: true
     onClicked: event => {
         if (event.button == Qt.LeftButton) {
-            // TODO: notification panel
-            console.log("!LAZY ALERT! TODO: notification panel");
+            Persistence.togglePanel();
         } else {
             NotificationService.toggleDnd();
         }

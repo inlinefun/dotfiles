@@ -15,6 +15,17 @@ PanelWindow {
     color: Colors.surface
     implicitHeight: Constants.barHeight
 
+    Rectangle {
+        anchors {
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
+            rightMargin: Persistence.panelWidth - Constants.border
+        }
+        color: Colors.surface_bright
+        implicitHeight: Constants.border
+    }
+
     RowLayout {
         id: left
         anchors {
