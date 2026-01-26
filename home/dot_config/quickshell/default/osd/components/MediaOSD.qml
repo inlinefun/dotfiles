@@ -119,6 +119,7 @@ OSDItem {
             RowLayout {
                 id: fillLayout
                 readonly property int fillHeight: 4
+                spacing: fillHeight
                 Layout.bottomMargin: Constants.margins + fillHeight
                 Layout.rightMargin: Constants.margins
                 Rectangle {

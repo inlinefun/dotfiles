@@ -9,6 +9,7 @@ import qs.osd
 import qs.services
 
 OSDItem {
+    show: true
     RowLayout {
         id: layout
         spacing: 0
@@ -97,6 +98,7 @@ OSDItem {
             RowLayout {
                 id: fillLayout
                 readonly property int fillHeight: 4
+                spacing: fillHeight
                 Layout.bottomMargin: Constants.margins + fillHeight
                 Layout.rightMargin: Constants.margins
                 Rectangle {
