@@ -10,15 +10,15 @@ import qs.services
 
 OSDItem {
     RowLayout {
+        id: layout
+        spacing: 0
         anchors {
             fill: parent
         }
         Item {
             id: container
-
             readonly property int iconSize: 28
             property color color: AudioService.muted ? Colors.error : Colors.on_surface
-
             Layout.fillHeight: true
             implicitWidth: height
             VolumeIcon {
@@ -72,49 +72,69 @@ OSDItem {
             }
         }
         ColumnLayout {
-            Layout.fillWidth: true
-            Layout.fillHeight: true
+            id: wrapperLayout
+            spacing: 0
             RowLayout {
                 id: textLayout
-
-                readonly property int fontSize: 16
-                Layout.topMargin: 8
-                Layout.rightMargin: 12
-
+                Layout.topMargin: Constants.margins
+                Layout.rightMargin: Constants.margins
                 StyledText {
                     text: "Volume"
-                    color: Colors.on_surface
-                    size: textLayout.fontSize
+                    size: 16
                 }
                 Item {
                     Layout.fillWidth: true
                 }
                 StyledText {
                     text: AudioService.volume
-                    size: textLayout.fontSize
+                    size: 16
                 }
             }
             Item {
+                id: spacer
                 Layout.fillHeight: true
             }
-            Rectangle {
-                id: barContainer
-                Layout.fillWidth: true
-                Layout.rightMargin: 12
-                Layout.bottomMargin: 12
-                implicitHeight: 4
-                color: Colors.surface_container_highest
-                radius: 4
+            RowLayout {
+                id: fillLayout
+                readonly property int fillHeight: 4
+                Layout.bottomMargin: Constants.margins + fillHeight
+                Layout.rightMargin: Constants.margins
                 Rectangle {
-                    implicitWidth: parent.width * AudioService.volume / 100
-                    implicitHeight: parent.implicitHeight
+                    Layout.fillWidth: true
+                    Layout.preferredWidth: AudioService.volume
+                    implicitWidth: spacer.width
+                    implicitHeight: fillLayout.fillHeight
+                    radius: fillLayout.fillHeight / 2
                     color: AudioService.muted ? Colors.error : Colors.primary
-                    radius: 4
-                    Behavior on implicitWidth {
-                        AnimateNumber {}
-                    }
+                    opacity: AudioService.volume > 0 ? 1 : 0
+                    clip: true
                     Behavior on color {
                         AnimateColor {}
+                    }
+                    Behavior on opacity {
+                        AnimateNumber {}
+                    }
+                    Behavior on Layout.preferredWidth {
+                        AnimateNumber {}
+                    }
+                }
+                Rectangle {
+                    Layout.fillWidth: true
+                    Layout.preferredWidth: 100 - AudioService.volume
+                    implicitWidth: spacer.width
+                    implicitHeight: fillLayout.fillHeight
+                    radius: fillLayout.fillHeight / 2
+                    color: Colors.surface_bright
+                    opacity: AudioService.volume < 100 ? 1 : 0
+                    clip: true
+                    Behavior on color {
+                        AnimateColor {}
+                    }
+                    Behavior on opacity {
+                        AnimateNumber {}
+                    }
+                    Behavior on Layout.preferredWidth {
+                        AnimateNumber {}
                     }
                 }
             }
