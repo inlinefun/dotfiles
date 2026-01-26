@@ -113,26 +113,50 @@ OSDItem {
                 visible: text.length > 0
             }
             Item {
+                id: spacer
                 visible: artist.text.length <= 0
             }
-            Rectangle {
-                id: barContainer
-                Layout.fillWidth: true
-                Layout.rightMargin: 12
-                Layout.bottomMargin: 12
-                implicitHeight: 4
-                color: Colors.surface_container_highest
-                radius: 4
+            RowLayout {
+                id: fillLayout
+                readonly property int fillHeight: 4
+                Layout.bottomMargin: Constants.margins + fillHeight
+                Layout.rightMargin: Constants.margins
                 Rectangle {
-                    implicitWidth: parent.width * MediaService.progress
-                    implicitHeight: parent.implicitHeight
-                    color: MediaService.playing ? Colors.primary : Colors.primary_fixed
-                    radius: 4
-                    Behavior on implicitWidth {
-                        AnimateNumber {}
-                    }
+                    Layout.fillWidth: true
+                    Layout.preferredWidth: (MediaService.progress * 100)
+                    implicitWidth: spacer.width
+                    implicitHeight: fillLayout.fillHeight
+                    radius: fillLayout.fillHeight / 2
+                    color: AudioService.muted ? Colors.error : Colors.primary
+                    opacity: (MediaService.progress * 100) > 0 ? 1 : 0
+                    clip: true
                     Behavior on color {
                         AnimateColor {}
+                    }
+                    Behavior on opacity {
+                        AnimateNumber {}
+                    }
+                    Behavior on Layout.preferredWidth {
+                        AnimateNumber {}
+                    }
+                }
+                Rectangle {
+                    Layout.fillWidth: true
+                    Layout.preferredWidth: 100 - (MediaService.progress * 100)
+                    implicitWidth: spacer.width
+                    implicitHeight: fillLayout.fillHeight
+                    radius: fillLayout.fillHeight / 2
+                    color: Colors.surface_bright
+                    opacity: (MediaService.progress * 100) < 100 ? 1 : 0
+                    clip: true
+                    Behavior on color {
+                        AnimateColor {}
+                    }
+                    Behavior on opacity {
+                        AnimateNumber {}
+                    }
+                    Behavior on Layout.preferredWidth {
+                        AnimateNumber {}
                     }
                 }
             }
