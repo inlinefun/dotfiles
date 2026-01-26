@@ -6,3 +6,5 @@ unsetopt NULL_GLOB
 
 # "line" cursor
 echo -ne '\e[5 q'
+
+fastfetch
