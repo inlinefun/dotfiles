@@ -9,7 +9,6 @@ import qs.osd
 import qs.services
 
 OSDItem {
-    show: true
     RowLayout {
         id: layout
         spacing: 0
