@@ -11,6 +11,7 @@ PanelWindow {
     id: root
     anchors {
         top: true
+        left: true
         right: true
         bottom: true
     }
@@ -63,6 +64,15 @@ PanelWindow {
                     NotificationItem {}
                 }
             }
+        }
+    }
+    MouseArea {
+        anchors {
+            fill: parent
+        }
+        acceptedButtons: Qt.AllButtons
+        onClicked: {
+            Persistence.togglePanel();
         }
     }
     Component.onCompleted: {
