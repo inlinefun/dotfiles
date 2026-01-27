@@ -1,8 +1,11 @@
 import QtQuick
+import QtQuick.Layouts
 import Quickshell
 import Quickshell.Wayland
 
+import qs.animations
 import qs.common
+import qs.services
 
 PanelWindow {
     id: root
@@ -17,7 +20,7 @@ PanelWindow {
     exclusionMode: ExclusionMode.Ignore
     color: "transparent"
     visible: implicitWidth > 1
-    implicitWidth: container.implicitWidth > 0 ? 250 : 1
+    implicitWidth: container.implicitWidth > 0 ? Constants.panelWidth : 1
     Rectangle {
         id: container
         anchors {
@@ -35,6 +38,31 @@ PanelWindow {
             }
             implicitWidth: Constants.border
             color: Colors.surface_bright
+            opacity: Persistence.isPanelOpen ? 1 : 0
+            Behavior on opacity {
+                AnimateNumber {}
+            }
+        }
+        Rectangle {
+            id: wrapper
+            anchors {
+                fill: parent
+                margins: Constants.margins
+            }
+            color: "transparent"
+            ColumnLayout {
+                anchors {
+                    top: parent.top
+                    left: parent.left
+                    right: parent.right
+                }
+                spacing: Constants.margins
+                Repeater {
+                    id: repeater
+                    model: NotificationService.notifications
+                    NotificationItem {}
+                }
+            }
         }
     }
     Component.onCompleted: {
