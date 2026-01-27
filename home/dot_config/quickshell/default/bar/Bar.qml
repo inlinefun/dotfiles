@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell
 
+import qs.animations
 import qs.bar.components
 import qs.common
 
@@ -24,6 +25,10 @@ PanelWindow {
         }
         color: Colors.surface_bright
         implicitHeight: Constants.border
+        opacity: Persistence.isPanelOpen ? 1 : 0
+        Behavior on opacity {
+            AnimateNumber {}
+        }
     }
 
     RowLayout {
