@@ -22,6 +22,15 @@ PanelWindow {
     color: "transparent"
     visible: implicitWidth > 1
     implicitWidth: container.implicitWidth > 0 ? Constants.panelWidth : 1
+    MouseArea {
+        anchors {
+            fill: parent
+        }
+        acceptedButtons: Qt.AllButtons
+        onClicked: {
+            Persistence.togglePanel();
+        }
+    }
     Rectangle {
         id: container
         anchors {
@@ -64,15 +73,6 @@ PanelWindow {
                     NotificationItem {}
                 }
             }
-        }
-    }
-    MouseArea {
-        anchors {
-            fill: parent
-        }
-        acceptedButtons: Qt.AllButtons
-        onClicked: {
-            Persistence.togglePanel();
         }
     }
     Component.onCompleted: {
