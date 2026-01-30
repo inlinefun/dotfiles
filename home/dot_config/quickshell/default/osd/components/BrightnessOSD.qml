@@ -90,7 +90,7 @@ OSDItem {
                     implicitWidth: spacer.width
                     implicitHeight: fillLayout.fillHeight
                     radius: fillLayout.fillHeight / 2
-                    color: AudioService.muted ? Colors.error : Colors.primary
+                    color: container.color
                     opacity: BrightnessService.brightness > 0 ? 1 : 0
                     clip: true
                     Behavior on color {
