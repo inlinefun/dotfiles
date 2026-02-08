@@ -3,6 +3,11 @@ layout {
     background-color "transparent"
     center-focused-column "on-overflow"
     always-center-single-column
+    preset-column-widths {
+        proportion 0.25
+        proportion 0.5
+        proportion 0.75
+    }
     border {
         on
         width 2

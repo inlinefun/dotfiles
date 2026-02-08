@@ -42,6 +42,9 @@ binds {
     Mod+Z cooldown-ms=100 {
         toggle-overview;
     }
+    Mod+C cooldown-ms=100 {
+        switch-preset-column-width;
+    }
 
     Mod+1 { focus-workspace 1; }
     Mod+2 { focus-workspace 2; }
