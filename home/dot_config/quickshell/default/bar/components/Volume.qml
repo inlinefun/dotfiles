@@ -10,10 +10,10 @@ MouseArea {
     property color color: AudioService.muted ? Colors.error : Colors.on_surface
     implicitWidth: Constants.barHeight
     implicitHeight: Constants.barHeight
-    acceptedButtons: Qt.LeftButton | Qt.MiddleButton
+    acceptedButtons: Qt.LeftButton | Qt.RightButton
     hoverEnabled: true
     onClicked: event => {
-        if (event.button == Qt.MiddleButton) {
+        if (event.button == Qt.RightButton) {
             AudioService.toggleMute();
         }
     }
