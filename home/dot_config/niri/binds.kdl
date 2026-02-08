@@ -92,6 +92,9 @@ binds {
     Mod+Ctrl+Down { set-window-height "+5%"; }
     Mod+Ctrl+Right { set-column-width "+5%"; }
 
+    Mod+Ctrl+A { set-column-width "-5%"; }
+    Mod+Ctrl+D { set-column-width "+5%"; }
+
     Mod+Shift+W { move-column-to-workspace-up; }
     Mod+Shift+A { move-column-left; }
     Mod+Shift+S { move-column-to-workspace-down; }
