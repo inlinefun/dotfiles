@@ -2,7 +2,6 @@ layout {
     gaps 5
     background-color "transparent"
     center-focused-column "on-overflow"
-    always-center-single-column
     preset-column-widths {
         proportion 0.25
         proportion 0.5
