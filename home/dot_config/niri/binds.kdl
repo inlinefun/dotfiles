@@ -21,6 +21,9 @@ binds {
     Mod+F {
         maximize-column;
     }
+    Mod+V {
+        maximize-column;
+    }
     Mod+R {
         spawn "rofi" "-show" "drun";
     }
@@ -33,7 +36,7 @@ binds {
     Mod+Shift+M {
         quit;
     }
-    Mod+V {
+    Mod+Shift+V {
         spawn "zsh" "-c" "hyprpicker | wl-copy"
     }
     Mod+Ctrl+S {
