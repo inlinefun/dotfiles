@@ -7,8 +7,8 @@ precmd() {
   LAST_EXIT_CODE=$? # used by indicator at working dir
 }
 
-fg()    { echo "%{\e[38;2;$1m%}"; }
-bg()    { echo "%{\e[48;2;$1m%}"; }
+fg()    { echo "%F{$1m}"; }
+bg()    { echo "%K{$1m}"; }
 reset() { echo "%{\e[0m%}"; }
 
 working_dir() {
@@ -23,16 +23,15 @@ working_dir() {
     fi
 
     if [[ $LAST_EXIT_CODE -eq 0 ]]; then
-        bg_color="$PROMPT_PRIMARY"
-        fg_color="$PROMPT_ON_PRIMARY"
+        bg_color="blue"
+        fg_color="black"
     else
-        bg_color="$PROMPT_ERROR"
-        fg_color="$PROMPT_ON_ERROR"
+        bg_color="red"
+        fg_color="black"
     fi
 
-    echo "$(fg "$bg_color")$(bg "$bg_color")$(fg "$fg_color")$output$(reset)$(fg "$bg_color")$(reset)"
+    echo "%F{$bg_color}%K{$bg_color}%F{$fg_color}$output%k%F{$bg_color}%f"
 }
-
 
 git_info() {
     git rev-parse --is-inside-work-tree &>/dev/null || return
@@ -49,24 +48,24 @@ git_info() {
     done < <(git status --porcelain 2>/dev/null)
 
     if (( ahead > 0 && behind > 0 )); then
-        bg_color="$PROMPT_GIT_DIVERGED"
+        bg_color="red"
     elif (( behind > 0 )); then
-        bg_color="$PROMPT_GIT_BEHIND"
+        bg_color="orange"
     elif (( ahead > 0 )); then
-        bg_color="$PROMPT_GIT_AHEAD"
+        bg_color="magenta"
     elif [[ -n $unstaged ]]; then
-        bg_color="$PROMPT_GIT_DIRTY"
+        bg_color="yellow"
     elif [[ -n $staged ]]; then
-        bg_color="$PROMPT_GIT_STAGED"
+        bg_color="blue"
     else
-        bg_color="$PROMPT_GIT_CLEAN"
+        bg_color="green"
     fi
 
-    fg_color="$PROMPT_ON_GIT"
+    fg_color="black"
     (( ahead > 0 ))  && arrows+="↑$ahead"
     (( behind > 0 )) && arrows+="↓$behind"
 
-    echo "$(fg "$bg_color")$(bg "$bg_color")$(fg "$fg_color") $branch $arrows$(reset)$(fg "$bg_color")$(reset)"
+    echo "%F{$bg_color}%K{$bg_color}%F{$fg_color} $branch $arrows%k%F{$bg_color}%f"
 }
 
 PROMPT='$(working_dir) '

@@ -61,7 +61,3 @@ output_path = "~/.config/vesktop/themes/material.css"
 [templates.zed]
 input_path = "./templates/zed-colors.json"
 output_path = "~/.config/zed/themes/material.json"
-
-[templates.zsh]
-input_path = "./templates/zsh-colors.zsh"
-output_path = "~/.config/zsh/10-colors.zsh"
