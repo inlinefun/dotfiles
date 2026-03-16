@@ -1,0 +1,6 @@
+[config]
+fallback_color = "#00aeff"
+
+[templates.hyprwhatever]
+input_path = "./templates/hypr.conf"
+output_path = "~/.config/hypr/colors.conf"
