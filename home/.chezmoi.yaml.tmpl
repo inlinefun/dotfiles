@@ -1,0 +1,3 @@
+data:
+    # get yaml, parse as yaml, select only palette, to json, hapi
+    colors: {{ (toJson ((fromYaml (include ".themes/0x96f.yaml")).palette)) }}
