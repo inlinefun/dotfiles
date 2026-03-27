@@ -1,0 +1,34 @@
+input {
+    keyboard {
+        xkb {
+        }
+        repeat-delay 500
+        repeat-rate 30
+        numlock
+    }
+    touchpad {
+        tap
+        dwt // disable while typing
+        // natural-scroll
+        accel-speed 0.0
+        accel-profile "flat"
+        natural-scroll
+        scroll-factor 1.0
+        scroll-method "two-finger"
+    }
+    mouse {
+        accel-speed 0.0
+        accel-profile "flat"
+    }
+    workspace-auto-back-and-forth
+
+    mod-key "Super"
+    mod-key-nested "Alt"
+}
+
+output "eDP-1" {
+    mode "1920x1080@60"
+    scale 1.0
+    variable-refresh-rate
+    focus-at-startup
+}
