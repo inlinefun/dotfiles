@@ -27,11 +27,11 @@ overview {
 animations {
     workspace-switch {
         duration-ms 300
-        curve "cubic-bezier" 0.05 0.7 0.1 1.0
+        curve "cubic-bezier" 0.05 0.9 0.1 1.05
     }
     horizontal-view-movement {
         duration-ms 300
-        curve "cubic-bezier" 0.05 0.7 0.1 1.0
+        curve "cubic-bezier" 0.05 0.9 0.1 1.05
     }
     window-open {
         duration-ms 300
@@ -42,6 +42,18 @@ animations {
         curve "cubic-bezier" 0.05 0.7 0.1 1.0
     }
     window-movement {
+        duration-ms 300
+        curve "cubic-bezier" 0.05 0.9 0.1 1.05
+    }
+    screenshot-ui-open {
+        duration-ms 500
+        curve "cubic-bezier" 0.05 0.7 0.1 1.0
+    }
+    exit-confirmation-open-close {
+        duration-ms 300
+        curve "cubic-bezier" 0.05 0.7 0.1 1.0
+    }
+    config-notification-open-close {
         duration-ms 300
         curve "cubic-bezier" 0.05 0.7 0.1 1.0
     }
