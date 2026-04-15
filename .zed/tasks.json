@@ -4,11 +4,13 @@
     "command": "chezmoi",
     "args": ["apply"],
     "show_command": false,
+    "hide": "on_success",
   },
   {
     "label": "Apply chezmoi configuration in symlink mode",
     "command": "chezmoi",
     "args": ["apply", "--mode", "symlink"],
     "show_command": false,
+    "hide": "on_success",
   },
 ]
