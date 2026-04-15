@@ -20,3 +20,4 @@ environment {
 }
 
 spawn-at-startup "systemctl" "--user" "start" "hyprpaper.service"
+spawn-at-startup "quickshell" "--no-duplicate" "--daemonize" "--config" "default"
