@@ -48,6 +48,18 @@ return {
             scale = 5,
             color = colors.foreground
         },
+        chunk_coords = {
+            x = 10,
+            y = 60,
+            scale = 5,
+            colors = colors.foreground
+        },
+        o_value = {
+            x = 10,
+            y = 110,
+            scale = 5,
+            color = colors.foreground
+        },
         pie_chart = {
             x = 1250,
             y = 415,
