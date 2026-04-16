@@ -8,6 +8,7 @@ return {
         toggle_remaps = "Ctrl-T",
         toggle_ninbot = "*-H",
         fullscreen = "F11",
+        keybinds = "Delete",
     },
     input = {
         keyboard = {
