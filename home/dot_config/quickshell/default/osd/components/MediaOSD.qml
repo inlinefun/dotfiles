@@ -17,55 +17,72 @@ OSDItem {
         anchors {
             fill: parent
         }
-        Item {
+        IconImage {
             Layout.fillHeight: true
             Layout.preferredWidth: height
-            MediaCircleIcon {
-                anchors {
-                    centerIn: parent
-                }
-                color: root.color
-                size: 28
-            }
-            MediaPauseIcon {
-                anchors {
-                    centerIn: parent
-                }
-                color: root.color
-                size: 28
-                opacity: MediaService.playing ? 1 : 0
-                Behavior on opacity {
-                    AnimateNumber {}
-                }
-            }
-            MediaPlayIcon {
-                anchors {
-                    centerIn: parent
-                }
-                color: root.color
-                size: 28
-                opacity: MediaService.playing ? 0 : 1
-                Behavior on opacity {
-                    AnimateNumber {}
-                }
-            }
-            IconImage {
-                anchors {
-                    fill: parent
-                    margins: 4
-                }
-                source: MediaService.url
-                mipmap: true
-            }
+            Layout.margins: Constants.marginS
+            source: MediaService.url
+            mipmap: true
         }
         ColumnLayout {
             Layout.fillWidth: true
             Layout.fillHeight: true
             Layout.margins: Constants.marginS
-            CText {
+            spacing: Constants.marginS
+            RowLayout {
+                Layout.fillHeight: true
                 Layout.fillWidth: true
-                text: MediaService.track
-                size: 18
+                ColumnLayout {
+                    Layout.fillHeight: true
+                    Layout.fillWidth: true
+                    spacing: 0
+                    CText {
+                        Layout.fillWidth: true
+                        text: MediaService.track
+                        size: 16
+                        color: Colors.foreground
+                    }
+                    CText {
+                        Layout.fillWidth: true
+                        text: MediaService.artist
+                        size: 12
+                        color: Colors.foreground_variant
+                    }
+                }
+                Item {
+                    id: icon
+                    Layout.alignment: Qt.AlignVCenter
+                    Layout.fillHeight: true
+                    Layout.preferredWidth: height
+                    Layout.margins: Constants.marginS
+                    Layout.rightMargin: 0
+                    MediaCircleIcon {
+                        anchors {
+                            centerIn: parent
+                        }
+                        size: 22
+                    }
+                    MediaPlayIcon {
+                        anchors {
+                            centerIn: parent
+                        }
+                        size: 22
+                        opacity: MediaService.playing ? 0 : 1
+                        Behavior on opacity {
+                            AnimateNumber {}
+                        }
+                    }
+                    MediaPauseIcon {
+                        anchors {
+                            centerIn: parent
+                        }
+                        size: 22
+                        opacity: MediaService.playing ? 1 : 0
+                        Behavior on opacity {
+                            AnimateNumber {}
+                        }
+                    }
+                }
             }
             Item {
                 Layout.fillHeight: true
@@ -103,9 +120,6 @@ OSDItem {
         }
     }
     Behavior on progress {
-        AnimateNumber {
-            duration: 1000
-            easing.type: Easing.Linear
-        }
+        AnimateNumber {}
     }
 }
