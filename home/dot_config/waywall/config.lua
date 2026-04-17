@@ -17,8 +17,8 @@ return {
         },
         mouse = {
             -- minecraft sens = 0.02291165,
-            regular_sensitivity = 8.19450792821915,
-            boat_eye_sensitivity = 0.5527966030399928,
+            regular_sensitivity = 8.80273719,
+            boat_eye_sensitivity = 0.59382738,
         },
     },
     -- resolution values from https://github.com/arjuncgore/waywall_generic_config
