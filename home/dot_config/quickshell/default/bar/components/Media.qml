@@ -76,9 +76,8 @@ MouseArea {
             CText {
                 Layout.margins: Constants.marginS
                 Layout.alignment: Qt.AlignVCenter
-                Layout.maximumWidth: 200
-                Layout.minimumWidth: contentWidth
                 Layout.preferredWidth: contentWidth
+                Layout.maximumWidth: 200
                 text: MediaService.track
                 elide: Text.ElideRight
             }
