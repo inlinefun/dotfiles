@@ -15,3 +15,6 @@ bindkey '^H' backward-kill-word
 
 bindkey "^Z" undo
 bindkey "^Y" redo
+
+# ctrl-left/right and ctrl-bspc will limit here
+WORDCHARS='*?_-.[]~=&;!$%^(){}<>|'
