@@ -19,5 +19,6 @@ environment {
     XDG_SESSION_DESKTOP "wayland"
 }
 
-spawn-at-startup "systemctl" "--user" "start" "hyprpaper.service"
+spawn-at-startup "hyprpaper"
+spawn-at-startup "xwayland-satellite"
 spawn-at-startup "quickshell" "--no-duplicate" "--daemonize" "--config" "default"
