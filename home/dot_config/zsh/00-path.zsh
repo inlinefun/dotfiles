@@ -4,5 +4,6 @@ path=(
   "/usr/lib/qt6/bin"            # qt programs, ex: svgtoqml
   "$HOME/flutter/bin"           # flutter
   "$HOME/Android/Sdk/"          # android sdk
+  "$HOME/.spicetify"            # spicetify
   $path
 )
