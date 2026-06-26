@@ -1,0 +1,19 @@
+{{- $color := "0x96f" -}}
+{{- $accent := "base0D" -}}
+{{- $theme := fromYaml (include (printf ".themes/%s.yaml" $color)) -}}
+
+data:
+    color_scheme: {{ $color | quote }}
+    dark_mode: {{ eqFold $theme.variant "dark" }}
+    palette: {{ toJson $theme.palette }}
+    accent: {{ (index $theme.palette $accent) | quote }}
+
+hooks:
+    apply:
+        post:
+            command: gsettings
+            args:
+                - set
+                - org.gnome.desktop.interface
+                - color-scheme
+                - {{ if .chezmoi.config.data.dark_mode }} prefer-dark {{ else }} default {{ end }}
