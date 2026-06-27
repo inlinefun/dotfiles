@@ -14,6 +14,16 @@ window-rule {
     }
 }
 
+window-rule {
+    match app-id="kitty"
+    background-effect {
+        xray false
+        blur true
+        noise 0.0
+        saturation 1.0
+    }
+}
+
 // no blur in firefox until there is something like the "layer_ignorealpha" from hyper land
 window-rule {
     match app-id=r#"firefox$"#
