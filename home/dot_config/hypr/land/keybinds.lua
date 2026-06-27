@@ -11,7 +11,7 @@ hl.bind(mod .. " + E", hl.dsp.exec_cmd(files))
 hl.bind(mod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mod .. " + SHIFT + C", hl.dsp.window.close())
 
-hl.bind(mod .. " + F", hl.dsp.layout("fit visible"))
+hl.bind(mod .. " + F", hl.dsp.layout("fit active"))
 hl.bind(mod .. " + C", hl.dsp.layout("colresize +conf"))
 
 hl.bind(mod .. " + W", hl.dsp.focus({ workspace = "-1" }))
