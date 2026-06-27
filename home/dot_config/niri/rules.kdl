@@ -24,6 +24,11 @@ window-rule {
     }
 }
 
+layer-rule {
+    match namespace="hyprpaper"
+    place-within-backdrop true
+}
+
 // no blur in firefox until there is something like the "layer_ignorealpha" from hyper land
 window-rule {
     match app-id=r#"firefox$"#

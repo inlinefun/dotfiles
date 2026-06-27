@@ -1,6 +1,7 @@
 // test
 layout {
     gaps 5
+    background-color "transparent"
     center-focused-column "never"
     preset-column-widths {
         proportion 0.25
