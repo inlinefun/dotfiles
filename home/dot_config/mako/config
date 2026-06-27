@@ -1,0 +1,18 @@
+include=~/.config/mako/colors
+
+font=IBM Plex Sans 12
+border-size=2
+border-radius=8
+default-timeout=0
+padding=10
+
+on-button-left=invoke-default-action
+on-button-right=dismiss
+on-button-middle=none
+
+[mode=do-not-disturb]
+invisible=1
+on-notify=none
+
+[mode=silent]
+on-notify=none
