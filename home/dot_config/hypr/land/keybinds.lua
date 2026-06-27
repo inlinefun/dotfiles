@@ -13,6 +13,24 @@ hl.bind(mod .. " + SHIFT + C", hl.dsp.window.close())
 hl.bind(mod .. " + F", hl.dsp.layout("fit visible"))
 hl.bind(mod .. " + C", hl.dsp.layout("colresize +conf"))
 
+hl.bind(mod .. " + W", hl.dsp.focus({ workspace = "-1" }))
+hl.bind(mod .. " + A", hl.dsp.focus({ direction = "left" }))
+hl.bind(mod .. " + S", hl.dsp.focus({ workspace = "+1" }))
+hl.bind(mod .. " + D", hl.dsp.focus({ direction = "right" }))
+hl.bind(mod .. " + SHIFT + W", hl.dsp.window.move({ workspace = "-1" }))
+hl.bind(mod .. " + SHIFT + A", hl.dsp.layout("swapcol l"))
+hl.bind(mod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "+1" }))
+hl.bind(mod .. " + SHIFT + D", hl.dsp.layout("swapcol r"))
+
+hl.bind(mod .. " + UP", hl.dsp.focus({ workspace = "-1" }))
+hl.bind(mod .. " + LEFT", hl.dsp.focus({ direction = "left" }))
+hl.bind(mod .. " + DOWN", hl.dsp.focus({ workspace = "+1" }))
+hl.bind(mod .. " + RIGHT", hl.dsp.focus({ direction = "right" }))
+hl.bind(mod .. " + SHIFT + UP", hl.dsp.window.move({ workspace = "-1" }))
+hl.bind(mod .. " + SHIFT + LEFT", hl.dsp.layout("swapcol l"))
+hl.bind(mod .. " + SHIFT + DOWN", hl.dsp.window.move({ workspace = "+1" }))
+hl.bind(mod .. " + SHIFT + RIGHT", hl.dsp.layout("swapcol r"))
+
 -- workspaces
 for i = 1, 10 do
     local key = i % 10 -- 10 maps to key 0
