@@ -26,7 +26,7 @@ hl.config({
         inactive_opacity = 0.9,
         fullscreen_opacity = 1.0,
         dim_modal = true,
-        dim_inactive = true,
+        dim_inactive = false,
         dim_strength = 0.1,
         dim_special = 0.1,
         dim_around = 0.4,
