@@ -14,7 +14,7 @@ animations {
     animation = fadeIn, 1, 4, e_decel
     animation = fadeOut, 1, 2.5, e_decel
 
-    animation = inputFieldColors, 1, 2, linear
+    animation = inputFieldpalette, 1, 2, linear
     animation = inputFieldDots, 1, 2, linear
     animation = inputFieldFade, 1, 2, linear
     animation = inputFieldWidth, 1, 2, linear
@@ -32,11 +32,11 @@ input-field {
     invert_numlock = true
     fade_on_empty = false
     hide_input = false
-    inner_color = rgb({{ .colors.base00 | replaceAllRegex "^#" "" }})
-    outer_color = rgb({{ .colors.base05 | replaceAllRegex "^#" "" }})
-    font_color = rgb({{ .colors.base05 | replaceAllRegex "^#" "" }})
-    fail_color = rgb({{ .colors.base08 | replaceAllRegex "^#" "" }})
-    check_color = rgb({{ .colors.base0D | replaceAllRegex "^#" "" }})
+    inner_color = rgb({{ .palette.base00 | replaceAllRegex "^#" "" }})
+    outer_color = rgb({{ .palette.base05 | replaceAllRegex "^#" "" }})
+    font_color = rgb({{ .palette.base05 | replaceAllRegex "^#" "" }})
+    fail_color = rgb({{ .palette.base08 | replaceAllRegex "^#" "" }})
+    check_color = rgb({{ .palette.base0D | replaceAllRegex "^#" "" }})
     outline_thickness = 2
     rounding = 5
     placeholder_text = <i> Password </i>
