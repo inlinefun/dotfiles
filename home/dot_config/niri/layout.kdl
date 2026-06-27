@@ -1,0 +1,30 @@
+// test
+layout {
+    gaps 5
+    center-focused-column "never"
+    preset-column-widths {
+        proportion 0.25
+        proportion 0.50
+        proportion 0.75
+    }
+    default-column-width { proportion 0.5; }
+    focus-ring {
+        off
+    }
+    border {
+        on
+        width 2
+    }
+    shadow {
+        off
+        softness 10
+        spread 5
+        offset x=0 y=0
+    }
+    tab-indicator {
+        off
+    }
+    insert-hint {
+        on
+    }
+}

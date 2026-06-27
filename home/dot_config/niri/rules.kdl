@@ -1,0 +1,32 @@
+window-rule {
+    open-maximized true
+    draw-border-with-background false
+    geometry-corner-radius 10
+    clip-to-geometry true
+    popups {
+        opacity 0.8
+        geometry-corner-radius 15
+        background-effect {
+            xray false
+            blur true
+            noise 0.0
+        }
+    }
+}
+
+// no blur in firefox until there is something like the "layer_ignorealpha" from hyper land
+window-rule {
+    match app-id=r#"firefox$"#
+    popups {
+        opacity 0.95
+        background-effect {
+            blur false
+        }
+    }
+}
+
+// firefox PiP
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
