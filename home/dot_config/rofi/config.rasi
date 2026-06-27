@@ -2,7 +2,7 @@
 
 configuration {
     modes: "drun";
-    font: "Inter 14";
+    font: "IBM Plex Sans 14";
 }
 
 window {
