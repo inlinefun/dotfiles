@@ -16,6 +16,7 @@ binds {
     Mod+Space hotkey-overlay-title="Application launcher" repeat=false { spawn "rofi" "-show" "drun"; }
     Mod+E hotkey-overlay-title="Open file manager: nautilus" repeat=false { spawn "nautilus"; }
     Mod+L hotkey-overlay-title="Lock the screen" repeat=false { spawn "hyprlock"; }
+    Mod+X hotkey-overlay-title="Color picker: hyprpicker" repeat=false { spawn-sh "hyprpicker | wl-copy"; }
 
     Mod+Comma hotkey-overlay-title=null repeat=false { consume-or-expel-window-left; }
     Mod+Period hotkey-overlay-title=null repeat=false { consume-or-expel-window-right; }
