@@ -1,0 +1,26 @@
+[
+  {
+    "label": "Init chezmoi configuration",
+    "command": "chezmoi",
+    "args": ["init"],
+    "allow_concurrent_runs": false,
+    "show_command": false,
+    "hide": "on_success",
+  },
+  {
+    "label": "Apply configuration in symlink mode",
+    "command": "chezmoi",
+    "args": ["apply", "--mode", "symlink"],
+    "allow_concurrent_runs": false,
+    "show_command": false,
+    "hide": "on_success",
+  },
+  {
+    "label": "Apply configuration",
+    "command": "chezmoi",
+    "args": ["apply"],
+    "allow_concurrent_runs": false,
+    "show_command": false,
+    "hide": "on_success",
+  },
+]

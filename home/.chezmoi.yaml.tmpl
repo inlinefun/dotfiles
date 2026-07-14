@@ -1,0 +1,11 @@
+{{- $scheme := "catppuccin-mocha" -}}
+{{- $primary := "base0E" -}}
+{{- $secondary := "base0D" -}}
+{{- $theme := fromYaml (include (printf ".themes/%s.yaml" $scheme)) -}}
+
+data:
+    theme: {{ $scheme | quote }}
+    dark_mode: {{ eqFold ($theme.variant) "dark" }}
+    colors: {{ toJson $theme.palette }}
+    primary: {{ (index $theme.palette $primary) | quote }}
+    secondary: {{ (index $theme.palette $secondary) | quote }}

@@ -1,0 +1,21 @@
+input {
+    keyboard {
+        xkb {
+            layout "us"
+        }
+        numlock
+    }
+    touchpad {
+        tap
+        dwt
+        natural-scroll
+        accel-speed 0.0
+        accel-profile "flat"
+        scroll-method "two-finger"
+    }
+    mouse {
+        accel-speed 0.0
+        accel-profile "flat"
+    }
+    warp-mouse-to-focus
+}

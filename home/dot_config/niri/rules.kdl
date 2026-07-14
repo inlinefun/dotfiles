@@ -1,0 +1,45 @@
+window-rule {
+    geometry-corner-radius 5
+    clip-to-geometry true
+    open-maximized true
+    draw-border-with-background false
+    popups {
+        opacity 0.8
+        geometry-corner-radius 5
+        background-effect {
+            xray false
+            blur true
+            noise 0.0
+            saturation 3.0
+        }
+    }
+}
+window-rule {
+    match is-active=false
+    opacity 0.9
+    background-effect {
+        blur true
+        xray false
+        noise 0.0
+        saturation 1.0
+    }
+}
+window-rule {
+    match app-id=r#"firefox$"#
+    popups {
+        opacity 0.9
+        background-effect {
+            blur false
+            saturation 1.0
+        }
+    }
+}
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+    block-out-from "screen-capture"
+}

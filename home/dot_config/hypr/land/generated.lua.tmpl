@@ -1,0 +1,43 @@
+hl.config({
+    general = {
+        col = {
+            active_border = "{{ .primary }}",
+--            active_border = {
+--                colors = {
+--                    "{{ .primary }}",
+--                    "{{ .secondary }}",
+--                },
+--            },
+            inactive_border = "{{ .colors.base03 }}",
+        },
+    },
+    decoration = {
+        glow = {
+            color = "{{ .primary }}",
+        },
+    },
+    group = {
+        col = {
+            border_active = "{{ .primary }}",
+            border_inactive = "{{ .primary }}aa",
+            border_locked_active = "{{ .secondary }}",
+            border_locked_inactive = "{{ .secondary }}aa",
+        },
+        groupbar = {
+            text_color = "{{ .colors.base00 }}",
+            text_color_inactive = "{{ .colors.base05 }}",
+            col = {
+                active = "{{ .primary }}",
+                inactive = "{{ .colors.base00 }}66",
+                locked_active = "{{ .secondary }}",
+                locked_inactive = "{{ .colors.base00 }}66",
+            },
+        },
+    },
+    misc = {
+        col = {
+            splash = "{{ .colors.base04 }}"
+        },
+        background_color = "{{ .colors.base00 }}",
+    },
+})
