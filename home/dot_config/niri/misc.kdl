@@ -41,3 +41,4 @@ prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/Screenshot_%Y-%m-%d_%H-%M-%S.png"
 spawn-at-startup "systemctl" "--user" "start" "hyprpaper.service"
 spawn-at-startup "systemctl" "--user" "start" "hyprpolkitagent.service"
+spawn-at-startup "quickshell" "--no-duplicate" "--daemonize" "--config" "lazyshell"
