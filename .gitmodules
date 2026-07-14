@@ -1,0 +1,4 @@
+[submodule "home/dot_config/quickshell/lazyshell"]
+	path = home/dot_config/quickshell/lazyshell
+	url = https://github.com/inlinefun/lazyshell.git
+	branch = main

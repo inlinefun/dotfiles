@@ -24,6 +24,7 @@ hl.on(
         hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Classic'")
         hl.exec_cmd("systemctl --user start hyprpaper.service")
         hl.exec_cmd("systemctl --user start hyprpolkitagent.service")
+        hl.exec_cmd("quickshell --no-duplicate --daemonize --config lazyshell")
     end
 )
 
