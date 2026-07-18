@@ -30,7 +30,7 @@ hl.config({
         dim_modal = true,
         dim_inactive = true,
         dim_strength = 0.10,
-        dim_special = 0.00,
+        dim_special = 0.40,
         dim_around = 0.00,
         border_part_of_window = true,
         blur = {
@@ -89,7 +89,7 @@ hl.config({
             round_only_edges = false,
             gaps_in = 5,
             gaps_out = 5,
-            blur = false,
+            blur = true,
             keep_upper_gap = false
         },
     },
