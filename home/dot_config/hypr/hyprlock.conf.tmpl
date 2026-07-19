@@ -1,0 +1,51 @@
+general {
+    hide_cursor = false
+    ignore_empty_text = true
+}
+
+animations {
+    enabled = true
+
+    bezier = alternative, 0.05, 0.9, 0.1, 1.05
+    bezier = default, 0.05, 0.7, 0.1, 1.0
+
+    animation = fade, true, 3, default
+    animation = inputField, true, 3, default
+    animation = inputFieldWidth, true, 3, alternative
+}
+
+
+background {
+    monitor =
+    path = screenshot
+    blur_passes = 3
+}
+
+input-field {
+    monitor =
+    size = 200, 40
+    invert_numlock = true
+    fade_on_empty = false
+    hide_input = false
+    inner_color = rgb({{ .colors.base00 | replaceAllRegex "^#" "" }})
+    outer_color = rgb({{ .primary | replaceAllRegex "^#" "" }})
+    font_color = rgb({{ .colors.base05 | replaceAllRegex "^#" "" }})
+    fail_color = rgb({{ .colors.base08 | replaceAllRegex "^#" "" }})
+    check_color = rgb({{ .secondary | replaceAllRegex "^#" "" }})
+    outline_thickness = 2
+    rounding = 5
+    placeholder_text = <i> Password </i>
+    halign = center
+    valign = center
+    position = 0, -60
+}
+
+label {
+    monitor =
+    text = $TIME12
+    font_family = Inter
+    font_size = 72
+    halign = center
+    valign = center
+    position = 0, 80
+}
