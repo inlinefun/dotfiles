@@ -29,6 +29,10 @@ binds {
     Mod+Shift+Down { move-window-down-or-to-workspace-down; }
     Mod+Shift+Left { move-column-left; }
     Mod+Shift+Right { move-column-right; }
+    Mod+Ctrl+Up { set-window-height "-10%"; }
+    Mod+Ctrl+Down { set-window-height "+10%"; }
+    Mod+Ctrl+Left { set-column-width "-10%"; }
+    Mod+Ctrl+Right { set-column-width "+10%"; }
 
     Mod+W { focus-window-or-workspace-up; }
     Mod+S { focus-window-or-workspace-down; }
@@ -38,6 +42,8 @@ binds {
     Mod+Shift+S { move-window-down-or-to-workspace-down; }
     Mod+Shift+A { move-column-left; }
     Mod+Shift+D { move-column-right; }
+    Mod+Ctrl+A { set-column-width "-10%"; }
+    Mod+Ctrl+D { set-column-width "+10%"; }
 
     Mod+Home { focus-column-first; }
     Mod+End  { focus-column-last; }
@@ -88,6 +94,11 @@ binds {
     // Windows in this column will appear as vertical tabs,
     // rather than stacked on top of each other.
     Mod+G { toggle-column-tabbed-display; }
+
+    Mod+Comma { consume-or-expel-window-left; }
+    Mod+Period { consume-or-expel-window-right; }
+    Mod+BracketLeft  { consume-or-expel-window-left; }
+    Mod+BracketRight { consume-or-expel-window-right; }
 
     Print { screenshot; }
     Mod+Ctrl+S { screenshot; }
