@@ -1,0 +1,76 @@
+local colors = require("colors")
+
+return {
+    keybinds = {
+        tall_res = "F4",
+        thin_res = "Alt_L",
+        wide_res = "C",
+        toggle_remaps = "Ctrl-T",
+        toggle_ninbot = "*-H",
+        fullscreen = "F11",
+        keybinds = "Delete",
+    },
+    input = {
+        keyboard = {
+            repeat_rate = 30,
+            repeat_delay = 400,
+        },
+        mouse = {
+            -- minecraft sens = 0.02291165,
+            regular_sensitivity = 8.77319872,
+            boat_eye_sensitivity = 0.59183474,
+        },
+    },
+    -- resolution values from https://github.com/arjuncgore/waywall_generic_config
+    resolutions = {
+        normal = {
+            width = 0,
+            height = 0,
+        },
+        tall = {
+            -- do NOT the values
+            width = 384,
+            height = 16384,
+        },
+        thin = {
+            width = 340,
+            height = 1080
+        },
+        wide = {
+            width = 1920,
+            height = 320,
+        },
+    },
+    mirrors = {
+        entity_count = {
+            x = 10,
+            y = 10,
+            scale = 5,
+            color = colors.foreground
+        },
+        chunk_coords = {
+            x = 10,
+            y = 60,
+            scale = 5,
+            colors = colors.foreground
+        },
+        o_value = {
+            x = 10,
+            y = 110,
+            scale = 5,
+            color = colors.foreground
+        },
+        pie_chart = {
+            x = 1250,
+            y = 415,
+            scale = 1.5,
+            color = colors.primary
+        },
+        pie_chart_labels = {
+            x = 20,
+            y = 500,
+            scale = 2,
+            color = colors.foreground
+        },
+    }
+}
