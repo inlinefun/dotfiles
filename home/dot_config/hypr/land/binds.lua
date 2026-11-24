@@ -13,7 +13,7 @@ hl.bind(mod .. " + SHIFT + M",
     hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 
 hl.bind(mod .. " + G", hl.dsp.group.toggle())
-hl.bind(mod .. " + SHIFT + G", hl.dsp.group.lock_active())
+hl.bind(mod .. " + SHIFT + G", hl.dsp.group.lock())
 hl.bind("ALT + TAB", hl.dsp.group.next())
 hl.bind("ALT + SHIFT + TAB", hl.dsp.group.prev())
 
