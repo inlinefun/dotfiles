@@ -68,5 +68,33 @@ hl.config({
             scale = 1.0,
             sharp = false
         }
-    }
+    },
+
+    group = {
+        auto_group = true,
+        insert_after_current = true,
+        focus_removed_window = true,
+        drag_into_group = 1,
+        groupbar = {
+            enabled = true,
+            font_family = "IBM Plex Sans",
+            font_size = 14,
+            gradients = true,
+            height = 32,
+            indicator_gap = 0,
+            indicator_height = 0,
+            stacked = false,
+            render_titles = true,
+            rounding = 2,
+            rounding_power = 2,
+            gradient_rounding = 5,
+            gradient_rounding_power = 4,
+            gradient_round_only_edges = true,
+            round_only_edges = false,
+            gaps_in = 5,
+            gaps_out = 5,
+            blur = true,
+            keep_upper_gap = false
+        },
+    },
 })
